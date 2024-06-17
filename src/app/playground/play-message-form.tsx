@@ -1,16 +1,18 @@
 "use client";
 
-import { sendMessage } from "@/app/actions";
-import { useRef, useState } from "react";
+import { Dispatch, SetStateAction, useRef, useState } from "react";
 import { useFormStatus } from "react-dom";
-import { toast } from "sonner";
 
-type MessageFormProps = {
+type PlayGuestSign = {
   author: string;
-  user_email: string;
+  message: string;
 };
 
-export default function MessageForm({ author, user_email }: MessageFormProps) {
+export default function MessageForm({
+  setRecords,
+}: {
+  setRecords: Dispatch<SetStateAction<PlayGuestSign[]>>;
+}) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [messageState, setMessageState] = useState("");
   const sendMessageAction = async () => {
@@ -19,21 +21,12 @@ export default function MessageForm({ author, user_email }: MessageFormProps) {
       return;
     }
     const messageObj = {
-      author,
+      author: "Me",
       message: inputRef.current?.value as string,
-      user_email,
     };
-    const ok = await sendMessage(messageObj);
-    if (ok) {
-      // toast.success("Message sent", {
-      //   className: "text-sm fill-amber-400 text-[#a3be8c]",
-      // });
-      setMessageState("");
-    } else {
-      toast.error("Message was not sent", {
-        className: "text-sm fill-amber-400 text-[#bf616a]",
-      });
-    }
+    await new Promise((resolve) => setTimeout(resolve, 200));
+    setRecords((prev) => [...prev, messageObj]);
+    setMessageState("");
   };
   return (
     <form action={sendMessageAction} className="flex items-center">

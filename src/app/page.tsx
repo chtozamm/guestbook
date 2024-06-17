@@ -4,8 +4,8 @@ import { SignOutButton } from "@/components/sign-out";
 import { getXataClient } from "@/db/xata";
 import MessageForm from "@/components/message-form";
 import Message from "@/components/message";
-import { Moon } from "@/components/icons";
 import ThemeToggle from "@/components/theme-toggle";
+import Link from "next/link";
 
 // GuestSign is a record that is returned from database
 type GuestSign = {
@@ -45,10 +45,13 @@ export default async function Home() {
         ) : (
           <div className="flex select-none flex-col items-center gap-4 sm:flex-row">
             <SignInButton />
-            {/* or
-            <button className="focus-visible:ring-accent bg-accent duration-500 inline-flex gap-2 rounded-md px-3 py-2 font-medium outline-none transition-colors ease-in-out hover:bg-[#79B8CA] focus-visible:ring-2">
+            or
+            <Link
+              href="/playground"
+              className="dark:border-utility-dark rounded-md border border-utility px-3 py-2 font-medium outline-none transition-colors duration-500 ease-in-out hover:border-accent hover:text-accent focus-visible:ring-2 focus-visible:ring-accent dark:hover:border-accent"
+            >
               Enter the Playground
-            </button> */}
+            </Link>
           </div>
         )}
         <ul className="mt-8 flex flex-col gap-3 rounded-md bg-white p-4 shadow-sm transition-colors duration-500 ease-in-out dark:bg-[#292e39] [&_li:nth-child(1)]:border-none [&_li:nth-child(1)]:pt-0 [&_li]:border-t [&_li]:pt-3">
