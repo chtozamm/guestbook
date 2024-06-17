@@ -1,7 +1,6 @@
 # xata database
 .xatarc
 /.xata
-/src/db
 
 # personal markdown files
 TODO.md

@@ -21,7 +21,7 @@ pnpm install
 
 ### Database
 
-Make sure to [initialize Xata](https://xata.io/docs/getting-started/nextjs) first. Xata-generated files were intentionally hidden, see [`.gitignore`](./.gitignore) for hints.
+Make sure to [initialize Xata](https://xata.io/docs/getting-started/nextjs) first.
 
 After initializing Xata, you should have the following environmental variables added to your `.env.local`:
 
