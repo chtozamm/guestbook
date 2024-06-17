@@ -10,7 +10,7 @@ export function SignOutButton() {
     >
       <button
         type="submit"
-        className="focus-visible:ring-accent duration-400 hover:bg-utility rounded-md px-2 py-1 font-medium text-gray-800 outline-none transition-colors ease-out focus-visible:ring-2"
+        className="dark:hover:bg-utility-dark rounded-md px-2 py-1 font-medium outline-none transition-colors duration-500 ease-in-out hover:bg-utility focus-visible:ring-2 focus-visible:ring-accent"
       >
         Sign out
       </button>

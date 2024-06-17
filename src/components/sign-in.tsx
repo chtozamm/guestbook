@@ -1,5 +1,5 @@
 import { signIn } from "@/auth";
-import Image from "next/image";
+import { Github } from "./icons";
 
 export function SignInButton() {
   return (
@@ -11,14 +11,15 @@ export function SignInButton() {
     >
       <button
         type="submit"
-        className="focus-visible:ring-accent duration-400 border-utility hover:bg-utility inline-flex gap-2 rounded-md border px-3 py-2 font-medium text-gray-800 outline-none transition-colors ease-out focus-visible:ring-2"
+        className="dark:border-utility-dark inline-flex gap-2 rounded-md border border-utility px-3 py-2 font-medium outline-none transition-colors duration-500 ease-in-out hover:border-accent hover:text-accent focus-visible:ring-2 focus-visible:ring-accent dark:hover:border-accent"
       >
-        <Image
+        {/* <Image
           alt="GitHub logo"
           src="/github-logo.svg"
           width="24"
           height="24"
-        />
+        /> */}
+        <Github className="size-6" />
         Sign in with GitHub
       </button>
     </form>

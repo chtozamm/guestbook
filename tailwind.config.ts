@@ -6,6 +6,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       fontSize: {
@@ -13,6 +14,9 @@ const config: Config = {
         "2xs": "12px",
       },
       colors: {
+        "light-dark": "#4c566a",
+        "dark-light": "#eceff4",
+        "utility-dark": "#4c566a",
         snow: "#f8f9fb",
         night: "#2e3440",
         accent: "#88c0d0",

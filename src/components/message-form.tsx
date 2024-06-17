@@ -36,13 +36,13 @@ export default function MessageForm({ author, user_email }: MessageFormProps) {
     }
   };
   return (
-    <form action={sendMessageAction} className="relative flex items-center">
+    <form action={sendMessageAction} className="flex items-center">
       <input
         ref={inputRef}
         value={messageState}
         onChange={(e) => setMessageState(e.target.value)}
         placeholder="Your message..."
-        className="border-utility bg-snow h-10 w-full rounded-md border py-1.5 pl-4 pr-28 outline-none transition-colors duration-500 ease-out focus-within:bg-white hover:bg-white"
+        className="h-10 w-full rounded-l-md py-1.5 pl-4 pr-28 shadow-sm outline-none transition-colors duration-500 ease-in-out focus-within:bg-snow hover:bg-snow dark:bg-[#292e39] dark:focus-within:bg-opacity-50 dark:hover:bg-opacity-50"
       />
       <SubmitButton />
     </form>
@@ -54,7 +54,7 @@ const SubmitButton = () => {
   return (
     <button
       type="submit"
-      className="focus-visible:ring-accent duration-400 bg-accent absolute right-0 flex h-full w-16 items-center justify-center rounded-r-md text-xs font-semibold uppercase outline-none transition-colors ease-out hover:bg-opacity-75 focus-visible:ring-2 focus-visible:ring-offset-2"
+      className="bg-light-dark dark:border-utility-dark flex h-10 w-16 items-center justify-center rounded-r-md text-xs font-semibold uppercase text-snow outline-none transition-colors duration-500 ease-in-out hover:bg-opacity-75 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-0 dark:border dark:bg-[#292e39] dark:hover:border-accent dark:hover:text-accent"
     >
       {pending ? <LoadingSpinner isShown={pending} /> : "Send"}
     </button>
